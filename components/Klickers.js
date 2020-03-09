@@ -237,8 +237,7 @@ class Klickers extends React.Component {
     return (
       <View style={klickersStyles.container}>
         <TouchableOpacity style={klickersStyles.button} onPress={() => this.handleClick()}>
-          <Text style={{ fontStyle: "italic" }}>protokoll</Text>
-          <Image style={{ width: 45, height: 25, transform: [{ rotate: "180deg" }] }} source={require("../images/arrow.png")}></Image>
+          <Text style={{ fontStyle: "italic" }}>Protokoll</Text>
         </TouchableOpacity>
 
         <View style={klickersStyles.redSideKlickers}>

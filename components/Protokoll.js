@@ -19,7 +19,6 @@ class Protokoll extends React.Component {
   }
 
   resetMatch() {
-
   }
 
   handleClick() {
@@ -54,40 +53,40 @@ class Protokoll extends React.Component {
     var nbsp = String.fromCharCode(160)
 
     return (
-      <View style={protokollStyles.container}>
+      <SafeAreaView style={protokollStyles.container}>
         <View style={protokollStyles.redSideProtocol}>
-          <Text h2 style={{ color: "red", fontSize: 34 }}>Röd</Text>
+          <Text h2 style={{ color: "red", fontSize: 40, height: 50 }}>Röd</Text>
           <View style={protokollStyles.redScoresTable}>
-            <View>
-              <Text>Klickers</Text>
-              <Text style={{ padding: 10 }}>{isZeroOne && this.props.protokoll.red.roundOne.klickers === 0 ? "0" : this.props.protokoll.red.roundOne.klickers || nbsp}</Text>
-              <Text style={{ padding: 10 }}>{isZeroTwo && this.props.protokoll.red.roundTwo.klickers === 0 ? "0" : this.props.protokoll.red.roundTwo.klickers || nbsp}</Text>
-              <Text style={{ padding: 10 }}>{isZeroThree && this.props.protokoll.red.roundThree.klickers === 0 ? "0" : this.props.protokoll.red.roundThree.klickers || nbsp}</Text>
-              <Text style={{ padding: 10 }}>{this.props.protokoll.red.klickersTotal || nbsp}</Text>
+            <View style={{width: "25%"}}>
+              <Text style={{ height: 20, textAlign: "center" }}>Klickers</Text>
+              <TextInput editable={false} style={{ padding: 10, borderWidth: 1, borderBottomWidth: 0, fontSize: 24, textAlign: "center" }}>{isZeroOne && this.props.protokoll.red.roundOne.klickers === 0 ? "0" : this.props.protokoll.red.roundOne.klickers || nbsp}</TextInput>
+              <TextInput editable={false} style={{ padding: 10, borderWidth: 1, borderBottomWidth: 0, fontSize: 24, textAlign: "center" }}>{isZeroTwo && this.props.protokoll.red.roundTwo.klickers === 0 ? "0" : this.props.protokoll.red.roundTwo.klickers || nbsp}</TextInput>
+              <TextInput editable={false} style={{ padding: 10, borderWidth: 1, borderBottomWidth: 0, fontSize: 24, textAlign: "center" }}>{isZeroThree && this.props.protokoll.red.roundThree.klickers === 0 ? "0" : this.props.protokoll.red.roundThree.klickers || nbsp}</TextInput>
+              <TextInput editable={false} style={{ padding: 10, borderWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.red.klickersTotal || nbsp}</TextInput>
             </View>
 
-            <View>
-              <Text>Poäng</Text>
-              <Text style={ protokollStyles.protokollParagraphs }>{this.props.protokoll.red.roundOne.points || nbsp}</Text>
-              <Text style={ protokollStyles.protokollParagraphs }>{this.props.protokoll.red.roundTwo.points || nbsp}</Text>
-              <Text style={ protokollStyles.protokollParagraphs }>{this.props.protokoll.red.roundThree.points || nbsp}</Text>
+            <View style={{width: "20%"}}>
+              <Text style={{ height: 20, textAlign: "center" }}>Poäng</Text>
+              <TextInput editable={false} style={{ padding: 10, borderTopWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.red.roundOne.points || nbsp}</TextInput>
+              <TextInput editable={false} style={{ padding: 10, borderTopWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.red.roundTwo.points || nbsp}</TextInput>
+              <TextInput editable={false} style={{ padding: 10, borderTopWidth: 1, borderBottomWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.red.roundThree.points || nbsp}</TextInput>
             </View>
 
-            <View>
-              <Text>Poängavdrag</Text>
-              <Text style={ protokollStyles.protokollParagraphs }>{this.props.protokoll.red.roundOne.penalty || nbsp}</Text>
-              <Text style={ protokollStyles.protokollParagraphs }>{this.props.protokoll.red.roundTwo.penalty || nbsp}</Text>
-              <Text style={ protokollStyles.protokollParagraphs }>{this.props.protokoll.red.roundThree.penalty || nbsp}</Text>
-              <Text>Totalt:</Text>
+            <View style={{width: "35%"}}>
+              <Text style={{ height: 20, textAlign: "center" }}>Poängavdrag</Text>
+              <TextInput editable={false} style={{ padding: 10, borderTopWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.red.roundOne.penalty || nbsp}</TextInput>
+              <TextInput editable={false} style={{ padding: 10, borderTopWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.red.roundTwo.penalty || nbsp}</TextInput>
+              <TextInput editable={false} style={{ padding: 10, borderTopWidth: 1, borderBottomWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.red.roundThree.penalty || nbsp}</TextInput>
+              <Text style={{ padding: 10, fontSize: 24, textAlign: "center"}}>Totalt:</Text>
               {this.props.protokoll.red.winner === true ? <Text style={protokollStyles.redWinner}>VINNARE</Text> : null}
             </View>
 
-            <View>
-              <Text>Summa</Text>
-              <Text>{this.props.protokoll.red.roundOne.sum || nbsp}</Text>
-              <Text>{this.props.protokoll.red.roundTwo.sum || nbsp}</Text>
-              <Text>{this.props.protokoll.red.roundThree.sum || nbsp}</Text>
-              <Text>{this.props.protokoll.red.total}</Text>
+            <View style={{width: "20%"}}>
+              <Text style={{ height: 20, textAlign: "center" }}>Summa</Text>
+              <TextInput editable={false} style={{ padding: 10, borderTopWidth: 1, borderRightWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.red.roundOne.sum || nbsp}</TextInput>
+              <TextInput editable={false} style={{ padding: 10, borderTopWidth: 1, borderRightWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.red.roundTwo.sum || nbsp}</TextInput>
+              <TextInput editable={false} style={{ padding: 10, borderTopWidth: 1, borderRightWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.red.roundThree.sum || nbsp}</TextInput>
+              <TextInput editable={false} style={{ padding: 10, borderTopWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.red.total || nbsp}</TextInput>
             </View>
 
           </View>
@@ -95,55 +94,53 @@ class Protokoll extends React.Component {
 
         <View style={protokollStyles.middlePageProtocol}>
           <TouchableOpacity style={protokollStyles.newMatch} onPress={this.resetMatch}><Text>Ny Match</Text></TouchableOpacity>
-          <Text style={{fontSize: 34 }}>&nbsp;</Text>
-          <Text>Rond</Text>
-          <Text>1</Text>
-          <Text>2</Text>
-          <Text>3</Text>
+          <Text style={{ height: 20, marginTop: 65, textAlign: "center" }}>Rond</Text>
+          <Text style={{fontSize: 40, height: 50, }}>1</Text>
+          <Text style={{fontSize: 40, height: 50, }}>2</Text>
+          <Text style={{fontSize: 40, height: 50, }}>3</Text>
         </View>
 
         <View style={protokollStyles.blueSideProtocol}>
-          <Text h2 style={{ color: "blue", fontSize: 34 }}>Blå</Text>
+          <Text h2 style={{ color: "blue", fontSize: 40, height: 50 }}>Blå</Text>
           <View style={protokollStyles.blueScoresTable}>
-            <View>
-              <Text>Poäng</Text>
-              <Text>{this.props.protokoll.blue.roundOne.points || nbsp}</Text>
-              <Text>{this.props.protokoll.blue.roundTwo.points || nbsp}</Text>
-              <Text>{this.props.protokoll.blue.roundThree.points || nbsp}</Text>
+            <View style={{width: "20%"}}>
+              <Text style={{ height: 20, textAlign: "center" }}>Poäng</Text>
+              <TextInput editable={false} style={{ padding: 10, borderTopWidth: 1, borderLeftWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.blue.roundOne.points || nbsp}</TextInput>
+              <TextInput editable={false} style={{ padding: 10, borderTopWidth: 1, borderLeftWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.blue.roundTwo.points || nbsp}</TextInput>
+              <TextInput editable={false} style={{ padding: 10, borderTopWidth: 1, borderLeftWidth: 1, borderBottomWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.blue.roundThree.points || nbsp}</TextInput>
             </View>
 
-            <View>
-              <Text>Poängavdrag</Text>
-              <Text>{this.props.protokoll.blue.roundOne.penalty || nbsp}</Text>
-              <Text>{this.props.protokoll.blue.roundTwo.penalty || nbsp}</Text>
-              <Text>{this.props.protokoll.blue.roundThree.penalty || nbsp}</Text>
-              <Text>Totalt:</Text>
+            <View style={{width: "35%"}}>
+              <Text style={{ height: 20, textAlign: "center" }}>Poängavdrag</Text>
+              <TextInput editable={false} style={{ padding: 10, borderTopWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.blue.roundOne.penalty || nbsp}</TextInput>
+              <TextInput editable={false} style={{ padding: 10, borderTopWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.blue.roundTwo.penalty || nbsp}</TextInput>
+              <TextInput editable={false} style={{ padding: 10, borderTopWidth: 1, borderBottomWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.blue.roundThree.penalty || nbsp}</TextInput>
+              <Text style={{ padding: 10, fontSize: 24, textAlign: "center"}}>Totalt:</Text>
               {this.props.protokoll.blue.winner === true ? <Text style={protokollStyles.blueWinner}>VINNARE</Text> : null}
             </View>
 
-            <View>
-              <Text>Summa</Text>
-              <Text>{this.props.protokoll.blue.roundOne.sum || nbsp}</Text>
-              <Text>{this.props.protokoll.blue.roundTwo.sum || nbsp}</Text>
-              <Text>{this.props.protokoll.blue.roundThree.sum || nbsp}</Text>
-              <Text>{this.props.protokoll.blue.total}</Text>
+            <View style={{width: "20%"}}>
+              <Text style={{ height: 20, textAlign: "center" }}>Summa</Text>
+              <TextInput editable={false} style={{ padding: 10, borderTopWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.blue.roundOne.sum || nbsp}</TextInput>
+              <TextInput editable={false} style={{ padding: 10, borderTopWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.blue.roundTwo.sum || nbsp}</TextInput>
+              <TextInput editable={false} style={{ padding: 10, borderTopWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.blue.roundThree.sum || nbsp}</TextInput>
+              <TextInput editable={false} style={{ padding: 10, borderTopWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.blue.total || nbsp}</TextInput>
             </View>
 
-            <View>
-              <Text>Klickers</Text>
-              <Text>{isZeroOne && this.props.protokoll.blue.roundOne.klickers === 0 ? "0" : this.props.protokoll.blue.roundOne.klickers || nbsp}</Text>
-              <Text>{isZeroTwo && this.props.protokoll.blue.roundTwo.klickers === 0 ? "0" : this.props.protokoll.blue.roundTwo.klickers || nbsp}</Text>
-              <Text>{isZeroThree && this.props.protokoll.blue.roundThree.klickers === 0 ? "0" : this.props.protokoll.blue.roundThree.klickers || nbsp}</Text>
-              <Text>{this.props.protokoll.blue.klickersTotal || nbsp}</Text>
+            <View style={{width: "25%"}}>
+              <Text style={{ height: 20, textAlign: "center" }}>Klickers</Text>
+              <TextInput editable={false} style={{ padding: 10, borderWidth: 1, borderBottomWidth: 0, fontSize: 24, textAlign: "center" }}>{isZeroOne && this.props.protokoll.blue.roundOne.klickers === 0 ? "0" : this.props.protokoll.blue.roundOne.klickers || nbsp}</TextInput>
+              <TextInput editable={false} style={{ padding: 10, borderWidth: 1, borderBottomWidth: 0,fontSize: 24, textAlign: "center" }}>{isZeroTwo && this.props.protokoll.blue.roundTwo.klickers === 0 ? "0" : this.props.protokoll.blue.roundTwo.klickers || nbsp}</TextInput>
+              <TextInput editable={false} style={{ padding: 10, borderWidth: 1, borderBottomWidth: 0,fontSize: 24, textAlign: "center" }}>{isZeroThree && this.props.protokoll.blue.roundThree.klickers === 0 ? "0" : this.props.protokoll.blue.roundThree.klickers || nbsp}</TextInput>
+              <TextInput editable={false} style={{ padding: 10, borderWidth: 1, fontSize: 24, textAlign: "center" }}>{this.props.protokoll.blue.klickersTotal || nbsp}</TextInput>
             </View>
 
           </View>
         </View>
         <TouchableOpacity style={protokollStyles.button} onPress={() => this.handleClick()}>
-          <Text style={{ fontStyle: "italic" }}>klickers</Text>
-          <Image style={{ width: 45, height: 25 }} source={require("../images/arrow.png")}></Image>
+          <Text style={{ fontStyle: "italic" }}>Klickers</Text>
         </TouchableOpacity>
-      </View>
+      </SafeAreaView>
     );
   }
 }
